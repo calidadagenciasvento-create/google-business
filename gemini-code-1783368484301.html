@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informe Ejecutivo Premium - Reputación Digital Vento Motos</title>
+    <title>Informe Ejecutivo Premium - Reputación Digital Vento Motos (Agosto 2026)</title>
     <style>
         :root {
-            --primary-blue: #0A2540; /* Azul Corporativo Vento */
-            --accent-blue: #1A73E8;  /* Azul Google Business */
-            --light-blue: #E8F0FE;   /* Fondos sutiles de filas destacadas */
-            --bg-main: #EDF2F7;      /* FONDO PREMIUM SUTIL: Azul grisáceo sedoso para toda la presentación */
-            --bg-card: #FFFFFF;      /* Tarjetas en blanco puro para generar un contraste elegante */
+            --primary-black: #111111;   /* Negro Corporativo Vento */
+            --primary-red: #D32F2F;     /* Rojo Marca Vento */
+            --accent-blue: #1A73E8;    /* Azul Google Business */
+            --bg-main: #ECEFF1;        /* Fondo gris/azul sedoso ejecutivo */
+            --bg-card: #FFFFFF;        /* Tarjetas en blanco puro */
             --text-dark: #202124;
             --text-muted: #5F6368;
-            --border-color: #E2E8F0;
+            --border-color: #CFD8DC;
             --alert-red: #C5221F;    
             --alert-bg: #FCE8E6;     
             --success-green: #137333;
@@ -31,17 +31,17 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1250px;
             margin: 0 auto;
             background-color: var(--bg-card);
             border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.1);
             padding: 40px;
         }
 
-        /* Encabezado */
+        /* Encabezado Ejecutivo */
         .header {
-            border-bottom: 3px solid var(--primary-blue);
+            border-bottom: 3px solid var(--primary-black);
             padding-bottom: 25px;
             margin-bottom: 35px;
             display: flex;
@@ -52,17 +52,14 @@
         .header-title-container {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
         }
 
-        .brand-icon {
-            background-color: var(--primary-blue);
-            color: white;
-            font-weight: 900;
-            padding: 10px 22px;
-            border-radius: 6px;
-            font-size: 20px;
-            letter-spacing: 1.5px;
+        .brand-logo {
+            max-height: 55px;
+            width: auto;
+            object-fit: contain;
+            filter: invert(1) brightness(0); /* Transforma el logo a negro puro */
         }
 
         .g-icon {
@@ -76,14 +73,15 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            margin-left: 5px;
+            margin-left: 8px;
         }
 
         .header h1 {
-            color: var(--primary-blue);
+            color: var(--primary-black);
             font-size: 26px;
             margin: 0;
-            font-weight: 700;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .header p {
@@ -91,16 +89,77 @@
             font-size: 13px;
             margin: 5px 0 0 0;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
+            font-weight: 600;
         }
 
         .badge-period {
-            background-color: var(--primary-blue);
+            background-color: var(--primary-red);
             color: white;
-            padding: 8px 18px;
+            padding: 10px 20px;
             border-radius: 6px;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 5px rgba(211, 47, 47, 0.3);
+        }
+
+        /* Sección Promedios Mensuales Históricos */
+        .history-section {
+            background-color: #F8F9FA;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin-bottom: 30px;
+        }
+
+        .history-title {
             font-size: 13px;
+            font-weight: 700;
+            color: var(--primary-black);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .history-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 12px;
+            text-align: center;
+        }
+
+        .history-card {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 5px;
+        }
+
+        .history-card.current {
+            border: 2px solid var(--primary-red);
+            background-color: #FFF8F8;
+        }
+
+        .history-month {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .history-val {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--primary-black);
+            margin-top: 4px;
+        }
+
+        .history-card.current .history-val {
+            color: var(--primary-red);
         }
 
         /* Resumen KPIs */
@@ -113,7 +172,7 @@
 
         .kpi-card {
             border: 1px solid var(--border-color);
-            border-left: 6px solid var(--accent-blue);
+            border-left: 6px solid var(--primary-black);
             border-radius: 10px;
             padding: 22px;
             text-align: center;
@@ -122,23 +181,27 @@
         }
 
         .kpi-card.highlight {
-            border-left-color: var(--primary-blue);
-            background-color: #F4F7FA;
+            border-left-color: var(--primary-red);
+            background-color: #FFFBFB;
         }
 
         .kpi-label {
             font-size: 11px;
             color: var(--text-muted);
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 8px;
             letter-spacing: 0.5px;
         }
 
         .kpi-value {
-            font-size: 30px;
-            font-weight: 700;
-            color: var(--primary-blue);
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary-black);
+        }
+
+        .kpi-card.highlight .kpi-value {
+            color: var(--primary-red);
         }
 
         .kpi-subtext {
@@ -165,12 +228,12 @@
         }
 
         .section-title {
-            color: var(--primary-blue);
+            color: var(--primary-black);
             font-size: 15px;
-            font-weight: 700;
+            font-weight: 800;
             margin: 0 0 18px 0;
             padding-bottom: 8px;
-            border-bottom: 2px solid var(--primary-blue);
+            border-bottom: 2px solid var(--primary-red);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -185,7 +248,7 @@
         }
 
         th {
-            background-color: var(--primary-blue);
+            background-color: var(--primary-black);
             color: white;
             text-align: left;
             padding: 12px;
@@ -254,7 +317,7 @@
 
         .analysis-item h4 {
             margin: 0 0 6px 0;
-            color: var(--primary-blue);
+            color: var(--primary-black);
             font-size: 13.5px;
             display: flex;
             justify-content: space-between;
@@ -275,28 +338,44 @@
         }
 
         .tag-red { background-color: var(--alert-bg); color: var(--alert-red); }
-        .tag-blue { background-color: #E8F0FE; color: var(--primary-blue); }
+        .tag-blue { background-color: #E8F0FE; color: var(--accent-blue); }
         .tag-amber { background-color: var(--neutral-bg); color: var(--neutral-amber); }
 
+        .notice-box {
+            margin-top: 25px;
+            padding: 18px;
+            background-color: #FFF8F8;
+            border-radius: 8px;
+            font-size: 13px;
+            border-left: 5px solid var(--primary-red);
+            line-height: 1.6;
+            color: #333333;
+        }
+
         .dashboard-footer {
-            background-color: #E8F0FE;
+            background-color: #F1F3F4;
             border-radius: 10px;
             padding: 22px;
             text-align: center;
             margin-top: 35px;
-            border: 1px solid #ADCCF9;
+            border: 1px solid var(--border-color);
         }
 
         .btn-link {
             display: inline-block;
-            background-color: var(--primary-blue);
+            background-color: var(--primary-black);
             color: white;
             text-decoration: none;
             padding: 12px 30px;
             border-radius: 6px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 13px;
             margin-top: 8px;
+            transition: background 0.2s;
+        }
+
+        .btn-link:hover {
+            background-color: var(--primary-red);
         }
 
         .signature {
@@ -310,234 +389,77 @@
     </style>
 </head>
 <body>
-
 <div class="container">
-    <div class="header">
-        <div class="header-title-container">
-            <div class="brand-icon">VENTO</div>
-            <div>
-                <h1>Reputación Digital: Google Business<span class="g-icon">G</span></h1>
-                <p>Monitoreo de Calidad Comercial</p>
-            </div>
-        </div>
-        <div class="badge-period">Resultados Junio 2026</div>
-    </div>
-
-    <div class="kpi-grid">
-        <div class="kpi-card highlight">
-            <div class="kpi-label">Calificación Nacional Promedio</div>
-            <div class="kpi-value">4.6 <span class="star-rating">★</span></div>
-            <div class="kpi-subtext">Rango saludable</div>
-        </div>
-        <div class="kpi-card">
-            <div class="kpi-label">Total Agencias Monitoreadas</div>
-            <div class="kpi-value">287</div>
-            <div class="kpi-subtext"></div>
-        </div>
-        <div class="kpi-card">
-            <div class="kpi-label">Volumen Incidencias Negativas</div>
-            <div class="kpi-value">78</div>
-            <div class="kpi-subtext">Comentarios Negativos Recibidos en Junio</div>
-        </div>
-    </div>
-
-    <div class="full-width-section" style="background-color: #FFFFFF;">
-        <h2 class="section-title">CANTIDAD DE COMENTARIOS NEGATIVOS POR RUBRO</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Área de Impacto</th>
-                    <th style="text-align: center;">Comentarios</th>
-                    <th style="text-align: right;">% Impacto</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr style="background-color: rgba(197,34,31,0.015);"><td>ATC (Atención al Cliente)</td><td style="text-align: center;">19</td><td style="text-align: right; color: var(--alert-red);">24.1%</td></tr>
-                <tr><td>COMENTARIO IMPROCEDENTE</td><td style="text-align: center;">18</td><td style="text-align: right;">22.8%</td></tr>
-                <tr style="background-color: rgba(10,37,64,0.015);"><td>POSTVENTA</td><td style="text-align: center;">16</td><td style="text-align: right; color: var(--primary-blue);">20.3%</td></tr>
-                <tr><td>COMENTARIO ATC / CLIENTE NO DETECTADO</td><td style="text-align: center;">10</td><td style="text-align: right;">12.7%</td></tr>
-                <tr><td>SOLO RESEÑA NEGATIVA</td><td style="text-align: center;">8</td><td style="text-align: right;">10.1%</td></tr>
-                <tr><td>VENTOCREDIT</td><td style="text-align: center;">8</td><td style="text-align: right;">10.1%</td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="analysis-block">
-        <h2 class="section-title" style="border-bottom-color: var(--accent-blue);">Análisis (Junio)</h2>
-        
-        <div class="analysis-item">
-            <h4>
-                <span>1. ATC (Atención al Cliente) — 24.1%</span>
-                <span class="analysis-tag tag-red">Detractor Principal</span>
-            </h4>
-            <p><strong>Causa de origen:</strong> Se identificaron oportunidades de mejora en la atención telefónica y en la experiencia de servicio dentro de la sucursal. Algunos usuarios señalaron dificultades para establecer contacto por teléfono y percibieron una atención limitada en ciertos momentos, particularmente en la explicación de modelos y productos. Adicionalmente, se reportaron incidencias administrativas relacionadas con el procesamiento de algunas operaciones de pago, donde la modalidad aplicada no correspondió a la solicitada por el cliente, generando ajustes posteriores y tiempos adicionales para la regularización de los saldos.</p>
-        </div>
-
-        <div class="analysis-item">
-            <h4>
-                <span>2. Comentario Improcedente — 22.8%</span>
-                <span class="analysis-tag tag-blue"></span>
-            </h4>
-            <p><strong>Causa de origen:</strong> Los comentarios recibidos se concentraron principalmente en temas relacionados con la atención al cliente, tiempos de respuesta, seguimiento comercial, comunicación de promociones y procesos administrativos. Asimismo, se identificaron incidencias en entregas, devoluciones y gestión de pagos que impactaron la experiencia del cliente, evidenciando la necesidad de reforzar la ejecución operativa y la comunicación durante todo el proceso de venta.</p>
-        </div>
-
-        <div class="analysis-item">
-            <h4>
-                <span>3. Postventa — 20.3%</span>
-                <span class="analysis-tag tag-red"></span>
-            </h4>
-            <p><strong>Causa de origen:</strong> Los comentarios de postventa se enfocaron principalmente en incidencias relacionadas con fallas mecánicas o de ensamble detectadas desde los primeros días de uso, así como en tiempos prolongados de atención para diagnósticos y reparaciones. Adicionalmente, los clientes manifestaron inconformidad por la limitada disponibilidad de refacciones, dificultades en la gestión de garantías, falta de seguimiento por parte de las áreas responsables y retrasos en la entrega de soluciones. En conjunto, los comentarios reflejan oportunidades para fortalecer los procesos de servicio postventa, comunicación con el cliente, abastecimiento de refacciones y cumplimiento de los compromisos adquiridos durante el proceso de garantía..</p>
-        </div>
-
-        <div class="analysis-item">
-            <h4>
-                <span>4. Comentario ATC / Cliente No Detectado — 12.7%</span>
-                <span class="analysis-tag tag-amber"></span>
-            </h4>
-            <p><strong>Causa de origen:</strong> Quejas cruzadas donde se mezclan malas experiencias de atención al cliente con fallas técnicas severas (como problemas eléctricos reiterados en el modelo <em>Hipster 170</em>). Sin embargo, la falta de datos específicos o perfiles anónimos en Google impide la localización inmediata en el CRM operativo para la aclaración corporativa.</p>
-        </div>
-
-        <div class="analysis-item">
-            <h4>
-                <span>5. Solo Reseña Negativa — 10.1%</span>
-                <span class="analysis-tag tag-amber"></span>
-            </h4>
-            <p><strong>Causa de origen:</strong> Puntuaciones severas (1 o 2 estrellas) publicadas sin texto explicativo. Si bien expresan descontento generalizado con la experiencia, mediante usuario que se tiene en Google, no se logra identificar.</p>
-        </div>
-
-        <div class="analysis-item">
-            <h4>
-                <span>6. VentoCredit — 10.1%</span>
-                <span class="analysis-tag tag-red"></span>
-            </h4>
-            <p><strong>Causa de origen:</strong> Contraste entre una cobranza automatizada percibida como invasiva ante retrasos de un solo día, frente a una respuesta sumamente lenta en la entrega de facturas originales tras liquidar la moto. También se identificaron demoras y extravíos de segundos juegos de llaves.</p>
-        </div>
-
-        <div style="margin-top: 25px; padding: 18px; background-color: #E8F0FE; border-radius: 8px; font-size: 13px; border-left: 5px solid var(--accent-blue); line-height: 1.6;">
-            <strong> Comentarios Generales</strong> En términos generales, los resultados muestran que la percepción negativa observada durante el mes responde principalmente a una combinación de factores operativos, administrativos y de soporte posteriores a la venta, más que a una problemática generalizada de atención en las agencias. No obstante, se identifican oportunidades para fortalecer la comunicación con los clientes, mejorar la coordinación entre áreas y reforzar los procesos de seguimiento, con el objetivo de continuar reduciendo los niveles de inconformidad y mejorar la experiencia integral del cliente.</div>
-    </div>
-
-    <div class="full-width-section" style="background-color: #FFFFFF;">
-        <h2 class="section-title">Evaluación por Gerente Distrital</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Distrito</th>
-                    <th>Responsable</th>
-                    <th>Mayo</th>
-                    <th>Junio</th>
-                    <th style="text-align: center;">Comentarios Negativos (Jun)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr style="background-color: rgba(24, 128, 56, 0.015);"><td>Distrito 2</td><td>Juan Rojo</td><td>4.61 ★</td><td style="font-weight: bold; color: var(--success-green);">4.60 ★</td><td style="text-align: center;"><span class="badge-neg">21</span></td></tr>
-                <tr><td>Distrito 4</td><td>Omar Madrigal</td><td>4.52 ★</td><td>4.55 ★</td><td style="text-align: center;"><span class="badge-neg">12</span></td></tr>
-                <tr><td>Distrito 1</td><td>Vanesa Mondragón</td><td>4.45 ★</td><td>4.50 ★</td><td style="text-align: center;"><span class="badge-neg">32</span></td></tr>
-                <tr style="background-color: rgba(217, 48, 37, 0.015);"><td>Distrito 3</td><td>Aldo Tapia</td><td>4.25 ★</td><td style="color: var(--alert-red); font-weight: bold;">4.33 ★</td><td style="text-align: center;"><span class="badge-neg">14</span></td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- TABLA MODIFICADA: Gerente Regional primero, Región después -->
-    <div class="full-width-section">
-        <h2 class="section-title">Ranking de Gerentes Regionales — Histórico y Cierre Junio (Mejor a Peor)</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Gerente Regional</th>
-                    <th style="width: 90px;">Región</th>
-                    <th>Marzo</th>
-                    <th>Abril</th>
-                    <th>Mayo</th>
-                    <th style="background-color: var(--accent-blue);">Junio (Score)</th>
-                    <th style="text-align: center; background-color: var(--primary-blue);">Negativos (Jun)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Josue Sebastian Rea García prov</td><td>Región 6</td><td>4.49 ★</td><td>4.53 ★</td><td>4.44 ★</td><td style="font-weight: bold; color: var(--success-green);">4.49 ★</td><td style="text-align: center;">0</td></tr>
-                <tr><td>Felipe Lopez Gomez</td><td>Región 7</td><td>4.54 ★</td><td>4.69 ★</td><td>4.79 ★</td><td style="font-weight: bold; color: var(--success-green);">4.81 ★</td><td style="text-align: center;" class="badge-top">2</td></tr>
-                <tr><td>Antonio de Jesus Lara Aguilar</td><td>Región 21</td><td>4.26 ★</td><td>4.71 ★</td><td>4.78 ★</td><td style="font-weight: bold; color: var(--success-green);">4.79 ★</td><td style="text-align: center;" class="badge-top">1</td></tr>
-                <tr><td>Jesus Vidals Herrera</td><td>Región 12</td><td>4.26 ★</td><td>4.74 ★</td><td>4.74 ★</td><td style="font-weight: bold; color: var(--success-green);">4.79 ★</td><td style="text-align: center;" class="badge-top">1</td></tr>
-                <tr><td>Juan Carlos Arreola Rodriguez</td><td>Región 25</td><td>4.55 ★</td><td>4.73 ★</td><td>4.73 ★</td><td style="font-weight: bold;">4.74 ★</td><td style="text-align: center;">0</td></tr>
-                <tr><td>Jose Dorantes Peralta</td><td>Región 10</td><td>4.17 ★</td><td>4.71 ★</td><td>4.75 ★</td><td style="font-weight: bold;">4.72 ★</td><td style="text-align: center;" class="badge-top">1</td></tr>
-                <tr><td>Pedro Alberto Fajardo Koh</td><td>Región 28</td><td>4.20 ★</td><td>4.52 ★</td><td>4.52 ★</td><td style="font-weight: bold;">4.70 ★</td><td style="text-align: center;" class="badge-top">2</td></tr>
-                <tr><td>Israel Gonzalez Sanchez</td><td>Región 19</td><td>4.55 ★</td><td>4.68 ★</td><td>4.61 ★</td><td style="font-weight: bold;">4.67 ★</td><td style="text-align: center;" class="badge-top">2</td></tr>
-                <tr><td>Ivan Garcia Cerritos</td><td>Región 14</td><td>4.48 ★</td><td>4.34 ★</td><td>4.35 ★</td><td style="font-weight: bold;">4.65 ★</td><td style="text-align: center;">0</td></tr>
-                <tr><td>Karina Vargas Vargas</td><td>Región 17</td><td>4.42 ★</td><td>4.62 ★</td><td>4.63 ★</td><td style="font-weight: bold;">4.63 ★</td><td style="text-align: center;" class="badge-neg">4</td></tr>
-                <tr><td>Pedro Humberto Trejo Rayon</td><td>Región 3</td><td>4.65 ★</td><td>4.65 ★</td><td>4.65 ★</td><td style="font-weight: bold;">4.63 ★</td><td style="text-align: center;" class="badge-neg">6</td></tr>
-                <tr><td>Armando Reyes Sanchez</td><td>Región 5</td><td>4.48 ★</td><td>4.57 ★</td><td>4.59 ★</td><td style="font-weight: bold;">4.60 ★</td><td style="text-align: center;" class="badge-neg">7</td></tr>
-                <tr><td>Rafael Alvarez Andrade</td><td>Región 13</td><td>4.74 ★</td><td>4.47 ★</td><td>4.46 ★</td><td style="font-weight: bold;">4.57 ★</td><td style="text-align: center;" class="badge-top">1</td></tr>
-                <tr><td>Christian Alexis Fernandez Gomez</td><td>Región 2</td><td>4.55 ★</td><td>4.55 ★</td><td>4.55 ★</td><td style="font-weight: bold;">4.55 ★</td><td style="text-align: center;" class="badge-top">2</td></tr>
-                <tr><td>Adolfo Manuel Barrientos Arellano</td><td>Región 24</td><td>4.48 ★</td><td>4.49 ★</td><td>4.50 ★</td><td style="font-weight: bold;">4.55 ★</td><td style="text-align: center;" class="badge-neg">4</td></tr>
-                <tr><td>Rafael de Jesus Garcia Jimenez</td><td>Región 27</td><td>4.70 ★</td><td>4.49 ★</td><td>4.28 ★</td><td style="font-weight: bold;">4.54 ★</td><td style="text-align: center;" class="badge-top">2</td></tr>
-                <tr><td>Ricardo Zarraga Torres</td><td>Región 8</td><td>4.59 ★</td><td>4.47 ★</td><td>4.55 ★</td><td style="font-weight: bold;">4.52 ★</td><td style="text-align: center;" class="badge-neg">4</td></tr>
-                <tr><td>Mario Alejandro Ojeda Rodriguez</td><td>Región 18</td><td>4.56 ★</td><td>4.53 ★</td><td>4.50 ★</td><td style="font-weight: bold;">4.48 ★</td><td style="text-align: center;" class="badge-top">1</td></tr>
-                <tr><td>Gerardo Alberto Olivares Jimenez</td><td>Región 16</td><td>4.36 ★</td><td>4.37 ★</td><td>4.34 ★</td><td style="font-weight: bold;">4.47 ★</td><td style="text-align: center;" class="badge-top">1</td></tr>
-                <tr><td>Jhonatan Santiago Zarate Nuñez</td><td>Región 15</td><td>4.27 ★</td><td>4.42 ★</td><td>4.42 ★</td><td style="font-weight: bold;">4.46 ★</td><td style="text-align: center;" class="badge-top">2</td></tr>
-                <tr><td>Josue Sebastian Rea García</td><td>Región 23</td><td>4.61 ★</td><td>4.41 ★</td><td>4.41 ★</td><td style="font-weight: bold;">4.35 ★</td><td style="text-align: center;" class="badge-neg">3</td></tr>
-                <tr><td>Hubiel Mejia Garcia</td><td>Región 20</td><td>4.68 ★</td><td>4.36 ★</td><td>4.27 ★</td><td style="font-weight: bold;">4.34 ★</td><td style="text-align: center;" class="badge-top">1</td></tr>
-                <tr><td>Guadalupe del Carmen Orozco Lopez</td><td>Región 22</td><td>4.80 ★</td><td>4.47 ★</td><td>4.47 ★</td><td style="font-weight: bold;">4.33 ★</td><td style="text-align: center;" class="badge-neg">3</td></tr>
-                <tr><td>Yael Alejandro Flores Chavez</td><td>Región 1</td><td>4.29 ★</td><td>4.31 ★</td><td>4.31 ★</td><td style="font-weight: bold; color: var(--alert-red);">4.26 ★</td><td style="text-align: center;" class="badge-neg">10</td></tr>
-                <tr><td>Diego Ulises Rea Lopez</td><td>Región 9</td><td>4.47 ★</td><td>4.15 ★</td><td>4.12 ★</td><td style="font-weight: bold; color: var(--alert-red);">4.16 ★</td><td style="text-align: center;" class="badge-top">2</td></tr>
-                <tr><td>Carlos Hermilo Landeros Heredia</td><td>Región 26</td><td>4.70 ★</td><td>4.17 ★</td><td>4.14 ★</td><td style="font-weight: bold; color: var(--alert-red);">4.13 ★</td><td style="text-align: center;" class="badge-top">1</td></tr>
-                <tr><td>Edgar Mathaeus Varelas Mancinas</td><td>Región 11</td><td>4.67 ★</td><td>4.18 ★</td><td>4.14 ★</td><td style="font-weight: bold; color: var(--alert-red);">4.12 ★</td><td style="text-align: center;" class="badge-neg">5</td></tr>
-                <tr><td>Jorge Luis Contreras Hernandez</td><td>Región 4</td><td>4.13 ★</td><td>4.11 ★</td><td>4.11 ★</td><td style="font-weight: bold; color: var(--alert-red);">4.11 ★</td><td style="text-align: center;" class="badge-neg">3</td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="grid-2col">
-        <div>
-            <h2 class="section-title" style="color: var(--success-green); border-bottom-color: var(--success-green);">Top Agencias Destacadas</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Agencia</th>
-                        <th>Equipo (Distrital / Regional)</th>
-                        <th style="text-align: right;">Score</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>170 Temoaya </td><td>Juan Carlos Rojo Barrañon / Jesus Vidals Herrera </td><td style="text-align: right;"><span class="badge-top">5.00 ★</span></td></tr>
-                    <tr><td>190 Huixtla</td><td>O. Madrigal / A. Lara</td><td style="text-align: right;"><span class="badge-top">5.00 ★</span></td></tr>
-                    <tr><td>199 Mapastepec</td><td>O. Madrigal / J. Dorantes</td><td style="text-align: right;"><span class="badge-top">5.00 ★</span></td></tr>
-                    <tr><td>201 Tultitlan</td><td>V. Mondragón / I. García</td><td style="text-align: right;"><span class="badge-top">5.00 ★</span></td></tr>
-                    <tr><td>206 Fuente San Gaspar</td><td>A. Tapia / R. Álvarez</td><td style="text-align: right;"><span class="badge-top">5.00 ★</span></td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div>
-            <h2 class="section-title" style="color: var(--alert-red); border-bottom-color: var(--alert-red);">Foco de Atención (Bottom)</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Agencia</th>
-                        <th>Equipo (Distrital / Regional)</th>
-                        <th style="text-align: right;">Score</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>61 Boca del Río</td><td>O. Madrigal / J. Contreras</td><td style="text-align: right;"><span class="badge-bottom">2.30 🔴</span></td></tr>
-                    <tr><td>266 Vallarta Francisco Villa</td><td>A. Tapia / E. Varelas</td><td style="text-align: right;"><span class="badge-bottom">2.60 🔴</span></td></tr>
-                    <tr><td>77 Tlajomulco</td><td>A. Tapia / E. Varelas</td><td style="text-align: right;"><span class="badge-bottom">3.00 🔴</span></td></tr>
-                    <tr><td>234 Guadalupe Zacatecas</td><td>A. Tapia / C. Landeros</td><td style="text-align: right;"><span class="badge-bottom">3.10 🔴</span></td></tr>
-                    <tr><td>143 Tlaxcala</td><td>O. Madrigal / G. Olivares</td><td style="text-align: right;"><span class="badge-bottom">3.20 🔴</span></td></tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="dashboard-footer">
-        <p style="margin: 0; font-size: 13px; color: var(--primary-blue); font-weight: 600;">¿Desea explorar el detalle interactivo por región?</p>
-        <a href="https://lookerstudio.google.com/u/0/reporting/5261ea5b-30ba-4fe5-b8e5-f7fedc670be7/page/p_c07l73fudd?pli=1" target="_blank" class="btn-link">Ver Dashboard Completo en Looker Studio</a>
-    </div>
-
-    <div class="signature">
-        <p style="margin: 0; font-weight: bold;">Mario Jerónimo</p>
-        <p style="margin: 3px 0 0 0;">Gerencia de Capacitación y Calidad — Vento Motos</p>
-    </div>
-</div>
-
-</body>
-</html>
+<div class="header"><div class="header-title-container"><img src="https://www.vento.com/wp-content/uploads/logo-vento.png" alt="Logo Vento Motos" class="brand-logo"><div><h1>Reputación Digital: Google Business<span class="g-icon">G</span></h1><p>Monitoreo de Calidad Comercial</p></div></div><div class="badge-period">Resultados Agosto 2026</div></div>
+<div class="history-section"><div class="history-title"><span>📈 Trayectoria Histórica de Promedio Nacional (2026)</span></div><div class="history-grid">
+<div class="history-card"><div class="history-month">Enero</div><div class="history-val">4.27 ★</div></div>
+<div class="history-card"><div class="history-month">Febrero</div><div class="history-val">4.74 ★</div></div>
+<div class="history-card"><div class="history-month">Marzo</div><div class="history-val">4.67 ★</div></div>
+<div class="history-card"><div class="history-month">Abril</div><div class="history-val">4.67 ★</div></div>
+<div class="history-card"><div class="history-month">Mayo</div><div class="history-val">4.62 ★</div></div>
+<div class="history-card"><div class="history-month">Junio</div><div class="history-val">4.60 ★</div></div>
+<div class="history-card"><div class="history-month">Julio</div><div class="history-val">4.66 ★</div></div>
+<div class="history-card current"><div class="history-month">Agosto</div><div class="history-val">4.62 ★</div></div>
+</div></div>
+<div class="kpi-grid"><div class="kpi-card highlight"><div class="kpi-label">Calificación Nacional Promedio</div><div class="kpi-value">4.62 <span class="star-rating">★</span></div><div class="kpi-subtext">Promedio mensual del dashboard al cierre de agosto</div></div><div class="kpi-card"><div class="kpi-label">Total Agencias Monitoreadas</div><div class="kpi-value">287</div><div class="kpi-subtext">Agencias con calificación visible en agosto</div></div><div class="kpi-card"><div class="kpi-label">Reseñas Totales</div><div class="kpi-value">1,137</div><div class="kpi-subtext">Reseñas acumuladas mostradas en el dashboard</div></div><div class="kpi-card"><div class="kpi-label">Volumen Incidencias Negativas</div><div class="kpi-value">87</div><div class="kpi-subtext">Incidencias negativas clasificadas en agosto</div></div></div>
+<div class="full-width-section" style="background-color:#FFFFFF;"><h2 class="section-title">CANTIDAD DE COMENTARIOS NEGATIVOS POR RUBRO (AGOSTO)</h2><table><thead><tr><th>Área de Impacto</th><th style="text-align:center;">Comentarios</th><th style="text-align:right;">% Impacto</th></tr></thead><tbody><tr style="background-color: rgba(197,34,31,0.015);"><td>POSTVENTA</td><td style="text-align: center;">22</td><td style="text-align: right; color: var(--alert-red); font-weight: bold;">25.3%</td></tr>
+<tr style="background-color: rgba(197,34,31,0.015);"><td>COMENTARIO IMPROCEDENTE</td><td style="text-align: center;">17</td><td style="text-align: right; color: var(--alert-red); font-weight: bold;">19.5%</td></tr>
+<tr><td>COMENTARIO ATC / CLIENTE NO DETECTADO</td><td style="text-align: center;">13</td><td style="text-align: right;">14.9%</td></tr>
+<tr><td>SOLO RESEÑA NEGATIVA</td><td style="text-align: center;">12</td><td style="text-align: right;">13.8%</td></tr>
+<tr><td>VENTOCREDIT</td><td style="text-align: center;">8</td><td style="text-align: right;">9.2%</td></tr>
+<tr><td>CASO DE DESPRESTIGIO A LA MARCA O AL PERSONAL</td><td style="text-align: center;">7</td><td style="text-align: right;">8.0%</td></tr>
+<tr><td>ATC (Atención al Cliente)</td><td style="text-align: center;">5</td><td style="text-align: right;">5.7%</td></tr>
+<tr><td>CONDICIONES COMERCIALES</td><td style="text-align: center;">1</td><td style="text-align: right;">1.1%</td></tr>
+<tr><td>QUEJAS DE INFRAESTRUCTURA</td><td style="text-align: center;">1</td><td style="text-align: right;">1.1%</td></tr>
+<tr><td>AGENCIA EN REMODELACIÓN</td><td style="text-align: center;">1</td><td style="text-align: right;">1.1%</td></tr></tbody></table></div>
+<div class="analysis-block"><h2 class="section-title" style="border-bottom-color:var(--accent-blue);">Análisis de Diagnóstico Cualitativo (Agosto)</h2><div class="analysis-item"><h4><span>1. Postventa — 25.3%</span><span class="analysis-tag tag-red">Detractor Principal</span></h4><p><strong>Causa de origen:</strong> Las reseñas se concentran en fallas de unidades, garantías, tiempos de taller, disponibilidad de refacciones y falta de seguimiento después de la compra.</p></div>
+<div class="analysis-item"><h4><span>2. Comentario improcedente — 19.5%</span><span class="analysis-tag tag-blue">Revisión / Canalización</span></h4><p><strong>Causa de origen:</strong> Casos que no corresponden directamente a la operación de la agencia o que requieren validación antes de asignar responsabilidad local.</p></div>
+<div class="analysis-item"><h4><span>3. Comentario ATC / Cliente no detectado — 14.9%</span><span class="analysis-tag tag-amber">Foco de Atención</span></h4><p><strong>Causa de origen:</strong> Inconformidades de atención sin datos suficientes para ubicar al cliente o el caso; se requiere reforzar la solicitud de información y el rastreo en los sistemas disponibles.</p></div>
+<div class="analysis-item"><h4><span>4. Solo reseña negativa — 13.8%</span><span class="analysis-tag tag-amber">Monitoreo</span></h4><p><strong>Causa de origen:</strong> Calificaciones negativas sin texto descriptivo, por lo que no es posible determinar una causa específica ni establecer contacto dirigido.</p></div>
+<div class="analysis-item"><h4><span>5. VentoCredit — 9.2%</span><span class="analysis-tag tag-amber">Foco de Atención</span></h4><p><strong>Causa de origen:</strong> Quejas asociadas con cobranza, aclaraciones de pagos, liquidaciones, entrega de facturas o documentación vinculada con el financiamiento.</p></div>
+<div class="analysis-item"><h4><span>6. Desprestigio a la marca o al personal — 8.0%</span><span class="analysis-tag tag-red">Seguimiento reputacional</span></h4><p><strong>Causa de origen:</strong> Publicaciones con señalamientos directos hacia la marca o colaboradores que requieren revisión puntual y respuesta institucional cuidada.</p></div><div class="notice-box"><strong>💬 Comentarios Generales de Cierre:</strong> Agosto cierra con una calificación promedio mensual de <strong>4.62 ★</strong>, <strong>1,137 reseñas totales</strong> y <strong>87 incidencias negativas clasificadas</strong>. Postventa concentra el mayor impacto (22 casos; 25.3%), seguida de comentarios improcedentes y casos de atención sin cliente identificado. La prioridad operativa se mantiene en el seguimiento posterior a la venta, garantías, refacciones y trazabilidad de cada inconformidad.</div></div>
+<div class="full-width-section" style="background-color:#FFFFFF;"><h2 class="section-title">Evaluación por Gerente Distrital</h2><table><thead><tr><th>Responsable</th><th>Mayo</th><th>Junio</th><th>Julio</th><th>Agosto (Score)</th><th style="text-align:center;">Incidencias (Ago)</th></tr></thead><tbody><tr style="background-color: rgba(19, 115, 51, 0.015);"><td><strong>Juan Carlos Rojo Barrañon</strong></td><td>4.61 ★</td><td>4.60 ★</td><td>4.59 ★</td><td style="font-weight:bold; color:var(--success-green);">4.58 ★</td><td style="text-align:center;"><span class="badge-neg">28</span></td></tr>
+<tr><td><strong>Omar Madrigal Torres</strong></td><td>4.52 ★</td><td>4.56 ★</td><td>4.55 ★</td><td style="font-weight:bold;">4.56 ★</td><td style="text-align:center;"><span class="badge-neg">15</span></td></tr>
+<tr><td><strong>Vanesa Mondragon Salgado</strong></td><td>4.45 ★</td><td>4.49 ★</td><td>4.53 ★</td><td style="font-weight:bold;">4.52 ★</td><td style="text-align:center;"><span class="badge-neg">26</span></td></tr>
+<tr><td><strong>Aldo Mauricio Tapia Gomez</strong></td><td>4.25 ★</td><td>4.33 ★</td><td>4.36 ★</td><td style="font-weight:bold;">4.38 ★</td><td style="text-align:center;"><span class="badge-neg">18</span></td></tr></tbody></table></div>
+<div class="full-width-section"><h2 class="section-title">Ranking de Gerentes Regionales — Histórico y Cierre Agosto (Mejor a Peor)</h2><table><thead><tr><th>Gerente Regional</th><th style="width:90px;">Región</th><th>Marzo</th><th>Abril</th><th>Mayo</th><th>Junio</th><th>Julio</th><th style="background-color:var(--primary-black);">Agosto (Score)</th><th style="text-align:center;background-color:var(--primary-red);">Incidencias (Ago)</th></tr></thead><tbody><tr><td>Jesus Vidals Herrera</td><td>Región 12</td><td>4.74 ★</td><td>4.74 ★</td><td>4.74 ★</td><td>4.79 ★</td><td>4.73 ★</td><td style="font-weight:bold; color:var(--success-green);">4.78 ★</td><td style="text-align:center;" class="badge-neg">5</td></tr>
+<tr><td>Felipe Lopez Gomez</td><td>Región 7</td><td>4.59 ★</td><td>4.69 ★</td><td>4.79 ★</td><td>4.81 ★</td><td>4.76 ★</td><td style="font-weight:bold; color:var(--success-green);">4.78 ★</td><td style="text-align:center;" class="badge-top">2</td></tr>
+<tr><td>Juan Carlos Arreola Rodriguez</td><td>Región 25</td><td>4.70 ★</td><td>4.73 ★</td><td>4.73 ★</td><td>4.74 ★</td><td>4.78 ★</td><td style="font-weight:bold; color:var(--success-green);">4.76 ★</td><td style="text-align:center;" class="badge-top">1</td></tr>
+<tr><td>Antonio de Jesus Lara Aguilar</td><td>Región 21</td><td>4.80 ★</td><td>4.71 ★</td><td>4.78 ★</td><td>4.79 ★</td><td>4.77 ★</td><td style="font-weight:bold; color:var(--success-green);">4.76 ★</td><td style="text-align:center;" class="badge-top">1</td></tr>
+<tr><td>Ivan Garcia Cerritos</td><td>Región 14</td><td>4.28 ★</td><td>4.34 ★</td><td>4.35 ★</td><td>4.65 ★</td><td>4.73 ★</td><td style="font-weight:bold; color:var(--success-green);">4.73 ★</td><td style="text-align:center;" class="badge-top">0</td></tr>
+<tr><td>Jose Dorantes Peralta</td><td>Región 10</td><td>4.67 ★</td><td>4.71 ★</td><td>4.75 ★</td><td>4.72 ★</td><td>4.69 ★</td><td style="font-weight:bold;">4.70 ★</td><td style="text-align:center;" class="badge-neg">4</td></tr>
+<tr><td>Israel Gonzalez Sanchez</td><td>Región 19</td><td>4.68 ★</td><td>4.68 ★</td><td>4.61 ★</td><td>4.67 ★</td><td>4.67 ★</td><td style="font-weight:bold;">4.69 ★</td><td style="text-align:center;" class="badge-neg">4</td></tr>
+<tr><td>Karina Vargas Vargas</td><td>Región 17</td><td>4.56 ★</td><td>4.62 ★</td><td>4.63 ★</td><td>4.63 ★</td><td>4.65 ★</td><td style="font-weight:bold;">4.63 ★</td><td style="text-align:center;" class="badge-neg">9</td></tr>
+<tr><td>Pedro Alberto Fajardo Koh</td><td>Región 28</td><td>4.52 ★</td><td>4.52 ★</td><td>4.52 ★</td><td>4.70 ★</td><td>4.66 ★</td><td style="font-weight:bold;">4.62 ★</td><td style="text-align:center;" class="badge-top">1</td></tr>
+<tr><td>Pedro Humberto Trejo Rayon</td><td>Región 3</td><td>4.65 ★</td><td>4.65 ★</td><td>4.65 ★</td><td>4.63 ★</td><td>4.62 ★</td><td style="font-weight:bold;">4.62 ★</td><td style="text-align:center;" class="badge-top">2</td></tr>
+<tr><td>Rafael Alvarez Andrade</td><td>Región 13</td><td>4.48 ★</td><td>4.47 ★</td><td>4.46 ★</td><td>4.57 ★</td><td>4.62 ★</td><td style="font-weight:bold;">4.61 ★</td><td style="text-align:center;" class="badge-top">2</td></tr>
+<tr><td>Armando Reyes Sanchez</td><td>Región 5</td><td>4.50 ★</td><td>4.59 ★</td><td>4.61 ★</td><td>4.60 ★</td><td>4.66 ★</td><td style="font-weight:bold;">4.61 ★</td><td style="text-align:center;" class="badge-neg">4</td></tr>
+<tr><td>Adolfo Manuel Barrientos Arellano</td><td>Región 24</td><td>4.55 ★</td><td>4.49 ★</td><td>4.50 ★</td><td>4.55 ★</td><td>4.56 ★</td><td style="font-weight:bold;">4.58 ★</td><td style="text-align:center;" class="badge-top">1</td></tr>
+<tr><td>Christian Alexis Fernandez Gomez</td><td>Región 2</td><td>4.55 ★</td><td>4.55 ★</td><td>4.55 ★</td><td>4.55 ★</td><td>4.58 ★</td><td style="font-weight:bold;">4.55 ★</td><td style="text-align:center;" class="badge-neg">10</td></tr>
+<tr><td>Josue Sebastian Rea Garcia  (provisional)</td><td>Región 6</td><td>4.58 ★</td><td>4.53 ★</td><td>4.44 ★</td><td>4.49 ★</td><td>4.52 ★</td><td style="font-weight:bold;">4.54 ★</td><td style="text-align:center;" class="badge-top">0</td></tr>
+<tr><td>Rafael de Jesus Garcia Jimenez</td><td>Región 27</td><td>4.42 ★</td><td>4.49 ★</td><td>4.28 ★</td><td>4.54 ★</td><td>4.53 ★</td><td style="font-weight:bold;">4.53 ★</td><td style="text-align:center;" class="badge-top">2</td></tr>
+<tr><td>Gerardo Alberto Olivares Jimenez</td><td>Región 16</td><td>4.42 ★</td><td>4.37 ★</td><td>4.34 ★</td><td>4.47 ★</td><td>4.49 ★</td><td style="font-weight:bold;">4.53 ★</td><td style="text-align:center;" class="badge-neg">3</td></tr>
+<tr><td>Ricardo Zarraga Torres</td><td>Región 8</td><td>4.47 ★</td><td>4.47 ★</td><td>4.55 ★</td><td>4.52 ★</td><td>4.50 ★</td><td style="font-weight:bold;">4.52 ★</td><td style="text-align:center;" class="badge-top">1</td></tr>
+<tr><td>Jhonatan Santiago Zarate Nuñez</td><td>Región 15</td><td>4.36 ★</td><td>4.42 ★</td><td>4.42 ★</td><td>4.46 ★</td><td>4.46 ★</td><td style="font-weight:bold;">4.47 ★</td><td style="text-align:center;" class="badge-neg">4</td></tr>
+<tr><td>Edgar Mathaeus Varelas Mancinas (provisional)</td><td>Región 20</td><td>4.26 ★</td><td>4.36 ★</td><td>4.27 ★</td><td>4.34 ★</td><td>4.43 ★</td><td style="font-weight:bold;">4.44 ★</td><td style="text-align:center;" class="badge-top">2</td></tr>
+<tr><td>Mario Alejandro Ojeda Rodriguez</td><td>Región 18</td><td>4.55 ★</td><td>4.53 ★</td><td>4.50 ★</td><td>4.48 ★</td><td>4.51 ★</td><td style="font-weight:bold;">4.39 ★</td><td style="text-align:center;" class="badge-neg">6</td></tr>
+<tr><td>Josue Sebastian Rea García</td><td>Región 23</td><td>4.48 ★</td><td>4.41 ★</td><td>4.41 ★</td><td>4.35 ★</td><td>4.42 ★</td><td style="font-weight:bold;">4.39 ★</td><td style="text-align:center;" class="badge-neg">6</td></tr>
+<tr><td>Guadalupe del Carmen Orozco Lopez</td><td>Región 22</td><td>4.61 ★</td><td>4.47 ★</td><td>4.47 ★</td><td>4.33 ★</td><td>4.29 ★</td><td style="font-weight:bold;">4.31 ★</td><td style="text-align:center;" class="badge-top">0</td></tr>
+<tr><td>Yael Alejandro Flores Chavez</td><td>Región 1</td><td>4.29 ★</td><td>4.31 ★</td><td>4.31 ★</td><td>4.26 ★</td><td>4.24 ★</td><td style="font-weight:bold;">4.26 ★</td><td style="text-align:center;" class="badge-neg">6</td></tr>
+<tr><td>Aldo Mauricio Tapia Gomez</td><td>Región 26</td><td>4.20 ★</td><td>4.07 ★</td><td>4.03 ★</td><td>4.13 ★</td><td>4.13 ★</td><td style="font-weight:bold;">4.25 ★</td><td style="text-align:center;" class="badge-top">0</td></tr>
+<tr><td>Edgar Mathaeus Varelas Mancinas</td><td>Región 11</td><td>4.26 ★</td><td>4.18 ★</td><td>4.14 ★</td><td>4.12 ★</td><td>4.22 ★</td><td style="font-weight:bold;">4.21 ★</td><td style="text-align:center;" class="badge-neg">4</td></tr>
+<tr><td>Diego Ulises Rea Lopez</td><td>Región 9</td><td>4.17 ★</td><td>4.15 ★</td><td>4.12 ★</td><td>4.16 ★</td><td>4.13 ★</td><td style="font-weight:bold;">4.15 ★</td><td style="text-align:center;" class="badge-neg">4</td></tr>
+<tr><td>Jorge Luis Contreras Hernandez</td><td>Región 4</td><td>4.13 ★</td><td>4.11 ★</td><td>4.11 ★</td><td>4.11 ★</td><td>4.12 ★</td><td style="font-weight:bold;">4.11 ★</td><td style="text-align:center;" class="badge-neg">3</td></tr></tbody></table></div>
+<div class="grid-2col"><div><h2 class="section-title" style="color:var(--success-green);border-bottom-color:var(--success-green);">Top Agencias Destacadas (Agosto)</h2><table><thead><tr><th>Agencia</th><th>Equipo (Distrital / Regional)</th><th style="text-align:right;">Score</th></tr></thead><tbody><tr><td>79 Teapa</td><td>O. Madrigal / F. López</td><td style="text-align:right;"><span class="badge-top">5.00 ★</span></td></tr>
+<tr><td>170 Temoaya</td><td>J. Rojo / J. Vidals</td><td style="text-align:right;"><span class="badge-top">5.00 ★</span></td></tr>
+<tr><td>199 Mapastepec</td><td>O. Madrigal / A. Lara</td><td style="text-align:right;"><span class="badge-top">5.00 ★</span></td></tr>
+<tr><td>201 Tultitlán</td><td>J. Rojo / R. Zarraga</td><td style="text-align:right;"><span class="badge-top">5.00 ★</span></td></tr>
+<tr><td>206 Fuente San Gaspar</td><td>A. Tapia / E. Varelas</td><td style="text-align:right;"><span class="badge-top">5.00 ★</span></td></tr></tbody></table></div><div><h2 class="section-title" style="color:var(--alert-red);border-bottom-color:var(--alert-red);">Foco de Atención (Bottom Agosto)</h2><table><thead><tr><th>Agencia</th><th>Equipo (Distrital / Regional)</th><th style="text-align:right;">Score</th></tr></thead><tbody><tr><td>61 Boca del Rio</td><td>O. M. / J. L.</td><td style="text-align:right;"><span class="badge-bottom">2.50 🔴</span></td></tr>
+<tr><td>208 San Pedro Pochutla</td><td>J. C. / G. d.</td><td style="text-align:right;"><span class="badge-bottom">2.80 🔴</span></td></tr>
+<tr><td>143 Tlaxcala</td><td>O. M. / G. A.</td><td style="text-align:right;"><span class="badge-bottom">2.90 🔴</span></td></tr>
+<tr><td>77 Tlajomulco</td><td>A. M. / E. M.</td><td style="text-align:right;"><span class="badge-bottom">3.10 🔴</span></td></tr>
+<tr><td>279 Playa del Carmen</td><td>O. M. / P. A.</td><td style="text-align:right;"><span class="badge-bottom">3.40 🔴</span></td></tr></tbody></table></div></div>
+<div style="background-color:#EBF3FC;border:1px solid #B6D4F8;border-left:5px solid var(--accent-blue);padding:16px;border-radius:8px;margin-bottom:25px;font-size:13px;color:#1C3D5A;"><strong>📌 Nota metodológica:</strong> Todas las cifras correspondientes a agosto se calcularon exclusivamente con la hoja <strong>“Comentarios Google Agosto”</strong>. El universo reportado considera únicamente las <strong>287 agencias con calificación visible</strong>.</strong>.</div>
+<div class="dashboard-footer"><p style="margin:0;font-size:13px;color:var(--primary-black);font-weight:700;">¿Desea explorar el detalle interactivo por región?</p><a href="https://lookerstudio.google.com/u/0/reporting/5261ea5b-30ba-4fe5-b8e5-f7fedc670be7/page/p_c07l73fudd?pli=1" target="_blank" class="btn-link">Ver Dashboard Completo en Looker Studio</a></div>
+<div class="signature"><p style="margin:0;font-weight:bold;color:var(--primary-black);">Mario Jerónimo</p><p style="margin:3px 0 0 0;"> Calidad — Vento Motos</p></div>
+</div></body></html>
